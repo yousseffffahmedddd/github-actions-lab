@@ -1,8 +1,8 @@
 name: Hello agile
 on: [push]
 jobs:
-say_hello:
+ say_hello:
   runs-on: ubuntu-latest
   steps:
-    - name:print hello 
-      run:echo "hello from github actions"
+    - name: print hello 
+      run: echo "hello from github actions"
