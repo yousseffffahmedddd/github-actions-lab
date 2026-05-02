@@ -16,7 +16,7 @@ jobs:
        run: |
          echo "---"
          python --version
-         python -c "print(hello from python in github actions)"
+         python -c "print('hello from python in github actions')"
          python -c "for i in range(3): print(f'counting {i+1}')"
          echo "---"
 
