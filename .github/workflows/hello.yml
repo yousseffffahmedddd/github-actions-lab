@@ -1,12 +1,22 @@
-name: Hello agile
-on:
-  push:
-    branches: [dev] #triggers when there is a push to the dev branch
-  pull_request:
-      branches: [main] #triggers when there is a pull request to the main branch
+name: Action basics demo
+on: [push]
+
 jobs:
- say_hello:
-  runs-on: ubuntu-latest
-  steps:
-    - name: print hello 
-      run: echo "hello from github actions"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - name: echo string
+       run: echo "welcome to ex3 github actions"
+
+     - name: setup python 
+       uses: actions/setup-python@v5
+       with:
+          python-version: '3.10' #pass input to action 
+     - name: run python commands
+       run: |
+         echo "---"
+         python --version
+         python -c "print(hello from python in github actions)"
+         python -c "for i in range(3): print(f'counting {i+1}')"
+         echo "---"
+
